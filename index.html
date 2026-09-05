@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="total-container">
+    <header>
+        <h1>Write your Task</h1>
+         <button type="button" class="del-allBtn">Delete all</button>
+        <span id="time">date</span>
+    </header>
+        <form id="input-form">
+         <div class="task-inputBox">
+            <input type="text" id="input-value" placeholder="Enter your task" required>
+            <button type="submit" class="add-btn">ADD</button>
+        <div class="selectOption">
+    <select>
+        <option value="">Select Work Type</option>
+        <option value="personal">Personal Work</option>
+        <option value="important">Professional Work</option>
+    </select>
+    <!-- Priority -->
+    <select>
+        <option value="">Select Priority</option>
+        <option value="high">High Priority</option>
+        <option value="low">Low Priority</option>
+    </select>
+            </div>
+            </div>
+        </form>
+        <ul id="tasks-container">
+            Nothing to show (Please add your task)
+        </ul>
+    </div> <!--end-->
+    <script src="script.js"></script>
+</body>
+</html>
