@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png">
     <title>To do app</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,19 +18,20 @@
          <div class="task-inputBox">
             <input type="text" id="input-value" placeholder="Enter your task" required>
             <button type="submit" class="add-btn">ADD</button>
-        <div class="selectOption">
-    <select>
+    <div class="selectOption">
+    <select class="workOption">
         <option value="">Select Work Type</option>
         <option value="personal">Personal Work</option>
         <option value="important">Professional Work</option>
     </select>
     <!-- Priority -->
-    <select>
+    <select class="priorityOption">
         <option value="">Select Priority</option>
         <option value="high">High Priority</option>
         <option value="low">Low Priority</option>
     </select>
-            </div>
+    <input type="date" class="dueDate" >
+         </div>
             </div>
         </form>
         <ul id="tasks-container">

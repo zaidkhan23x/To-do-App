@@ -1,6 +1,6 @@
         :root{
-            --bg-theme:#e3e3e3;
-            --bg2-color:#d0cfcf;
+            --bg-theme:#f5f4f4;
+            --bg2-color:#c4cfdd;
             --btn-color:black;
         }
         *,body{
@@ -14,15 +14,12 @@
             margin: auto;
             width: 75%;
             height: 100%;
-            border-left: 3px solid var(--bg2-color);
-            border-right: 2px solid var(--bg2-color);
+            border: 3px solid var(--bg2-color);
         }
-        
         header{
             height: 15vh;
         }
          .del-allBtn{ 
-            align-self: last baseline;
              background-color: var(--bg-theme); 
              color: var(--btn-color);
              position: relative;
@@ -40,7 +37,7 @@
             height: 15vh;
             background-color:var(--bg2-color);
         }
-        .task-inputBox input{
+        #input-value{
             border: none;
             border-bottom: 1px solid;
             outline: none;
@@ -69,16 +66,22 @@
             background-color: inherit;
            align-content: center;
            display: flex;
-           justify-content: flex-start;
-           /* gap: 1rem; */
+           justify-content:flex-start;
+           gap: 2rem;
            align-items: center;
          
         }
         .selectOption select{
             height: 60%;
-            background-color: var(--bg2-color);
-            margin-left: 2rem;
+            background-color: var(--bg-theme);
+            /* margin-left: 2rem; */
             opacity: 70%;
+        }
+        .dueDate{
+            height: 60%;
+             background-color: var(--bg-theme);
+            opacity: 70%;
+            border: 1px solid black;
         }
         /* Input box code end */
         #tasks-container{
@@ -112,6 +115,17 @@
             border: none;
             outline: none;
             width: 100%;
+        }
+        .metabox{
+             height: 50%;
+             text-align: left;
+             align-items: center;
+            opacity: 80%;
+            display: flex;
+        }
+        .metabox span{ 
+            margin-left: 1rem; font-size:small; border-radius: 50px; padding: 1px 7px;
+            background-color:var(--bg-theme); border: 1px solid black;
         }
         .edit-del-box{ width: 15%; }
         .edit-del-box button{
