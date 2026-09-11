@@ -10,9 +10,10 @@
 <body>
      <div class="total-container">
     <header>
-        <h1>Write your Task</h1>
+        <h2>Write your Task</h2>
          <button type="button" class="del-allBtn">Delete all</button>
         <span id="time">date</span>
+        <button type="button" id="darkModeBtn"> Dark Mode</button>
     </header>
         <form id="input-form">
          <div class="task-inputBox">
@@ -30,7 +31,7 @@
         <option value="high">High Priority</option>
         <option value="low">Low Priority</option>
     </select>
-    <input type="date" class="dueDate" >
+    <input type="text" class="dueDate" placeholder="Select Date" onfocus="this.type='date'; this.showPicker();" >
          </div>
             </div>
         </form>

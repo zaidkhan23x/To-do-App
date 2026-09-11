@@ -2,6 +2,14 @@
         let time= new Date().toLocaleDateString(undefined, { weekday:'long', year:'numeric', month:'long', day:'numeric' });
          document.getElementById("time").textContent=time;
 
+         const btn = document.getElementById("darkModeBtn");
+
+          btn.addEventListener("click", () => {
+         document.body.classList.toggle("dark-mode");
+         localStorage.setItem('theme', document.body.classList.contains("dark-mode") ? 'dark' : 'light');
+        });
+        if(localStorage.getItem('theme') === 'dark')
+          document.body.classList.add('dark-mode');
          //Global variable
          const tasks_container = document.getElementById("tasks-container");
          let isFirstTime = true; //flag define
@@ -130,7 +138,7 @@
           const tasktext = li.querySelector('.text').innerText.trim();
            const currentindex = datalist.findIndex((item)=>item.text === tasktext);
           if(currentindex >= 0){
-          datalist = datalist.filter(text => text !== tasktext);
+          datalist = datalist.filter(text => text.text !== tasktext);
           localStorage.setItem('details', JSON.stringify(datalist));
           console.log(currentindex + " index task is deleted succesfully");
         }

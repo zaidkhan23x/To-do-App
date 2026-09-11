@@ -1,9 +1,19 @@
         :root{
             --bg-theme:#f5f4f4;
             --bg2-color:#c4cfdd;
-            --btn-color:black;
+            --text-color:black;
+        }
+        .dark-mode {
+              --bg-theme: #232321;
+              --bg2-color: #292d1d;
+              --text-color: #c4cfdd;
+              }
+        body{
+            transition:background 0.4s ease, color 0.4s ease;
         }
         *,body{
+            background: var(--bg-theme);
+            color: var(--text-color);
             padding: 0;
             margin: 0;
             box-sizing: border-box;
@@ -15,26 +25,40 @@
             width: 75%;
             height: 100%;
             border: 3px solid var(--bg2-color);
+            min-height: 100vh;
+            transition:background 0.4s ease, color 0.4s ease;
         }
         header{
-            height: 15vh;
+            height: 6rem;
         }
-         .del-allBtn{ 
-             background-color: var(--bg-theme); 
-             color: var(--btn-color);
+        #darkModeBtn,.del-allBtn{
+            background-color: var(--bg-theme); 
+             color: var(--text-color);
              position: relative;
-             right: 30%;
              bottom: 0.5rem;
-             width: 10%;
+             width: fit-content;
              height: 1.5rem;
              font-weight: 600;
              font-size: 70%;
+             border-radius: 10px;
+             padding: 6px 12px;
+            white-space: nowrap;
+        }
+        .del-allBtn{ 
+             right: 23%;
             }
-            .del-allBtn:hover{
+        .del-allBtn:active{
                 color: rgb(215, 87, 87);
             }
+        #darkModeBtn{
+            left: 20%;
+        }
+       #darkModeBtn:active{
+                color: var(--text-color);
+                background-color: var(--bg2-color);
+               }
         .task-inputBox{
-            height: 15vh;
+            height: 6rem;
             background-color:var(--bg2-color);
         }
         #input-value{
@@ -52,11 +76,11 @@
             cursor: pointer;
         }
         .add-btn{ 
-            width: 10%;
+            width: 6rem;
             height: 2.3rem; 
             font-size: medium;
             color: var(--bg2-color);
-            background-color: var(--btn-color);
+            background-color: var(--text-color);
             position: relative;
             top: 3px;
         }
@@ -69,26 +93,29 @@
            justify-content:flex-start;
            gap: 2rem;
            align-items: center;
-         
+           
         }
         .selectOption select{
             height: 60%;
             background-color: var(--bg-theme);
             /* margin-left: 2rem; */
             opacity: 70%;
+            width: 15%;
         }
         .dueDate{
             height: 60%;
              background-color: var(--bg-theme);
             opacity: 70%;
             border: 1px solid black;
+            width: 15%;
         }
         /* Input box code end */
+
         #tasks-container{
            height: 100%;
         }
         #tasks-container li{
-            height: 4rem;
+            height: 12vh;
             border-bottom: 1px solid;
             list-style: none;
             display: flex;    
@@ -148,4 +175,16 @@
          @media (max-width:700px){ 
             .total-container{width: 100%;}
             .del-allBtn{ right:10%; top:1px;  width: 20%;}
+             .selectOption select{width: 20%; margin: 0.5rem;}
+             .dueDate{width: 25%; }
+              .del-allBtn{right: 5%; top: 35%;}
+               #darkModeBtn{ left: 5%; top: 20%; }
+              #input-value{width: 75%;}
+             /* header{height: 12vh;} */
+             #time{font-size: smaller;}
         }
+         @media (max-width:400px){
+             #darkModeBtn{ left: 2%; top: 25%; }
+             #input-value{width: 65%;}
+            .del-allBtn{right: 2%; top: 35%;}
+         }
